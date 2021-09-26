@@ -28,7 +28,7 @@ module.exports = {
         'eol-last': 'error',
         'key-spacing': 'error',
         'keyword-spacing': 'error',
-        'linebreak-style': ['error', 'unix'],
+        'linebreak-style': ['error', 'windows'],
         'no-console': 'off',
         'no-param-reassign': 'error',
         'no-tabs': 'error',
