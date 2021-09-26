@@ -11,19 +11,19 @@ test('Route', () => {
         }
     >({
         path: '/profile/:username/:tab',
-        component: <div />
+        component: <div />,
     });
 
     const replacedUrlParams = route.replaceUrlParams({
         username: 'Simraki',
-        tab: 'profile'
+        tab: 'profile',
     });
     const paramsObject = route.getParamsObject(['Simraki', 'profile']);
 
     expect(route.path).toBe('/profile/:username/:tab');
     expect(paramsObject).toEqual({
         tab: 'profile',
-        username: 'Simraki'
+        username: 'Simraki',
     });
     expect(replacedUrlParams).toBe('/profile/Simraki/profile');
     expect(route.rootPath).toBe('/profile');

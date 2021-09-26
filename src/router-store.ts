@@ -16,7 +16,7 @@ export type Store = {
 export class RouterStore<S extends Store> {
     params: RouteParams = {};
     queryParams: QueryParams = {};
-    currentRoute?: Route<S, any, any>;
+    currentRoute?: Route<S, any, any> = undefined;
 
     readonly store: S;
 
