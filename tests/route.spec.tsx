@@ -1,6 +1,6 @@
 // eslint-disable-next-line
 import React from 'react';
-import { Route } from '../src/route';
+import { Route } from '../src';
 
 test('Route', () => {
     const route = new Route<
@@ -15,16 +15,16 @@ test('Route', () => {
     });
 
     const replacedUrlParams = route.replaceUrlParams({
-        username: 'kitze',
+        username: 'Simraki',
         tab: 'profile'
     });
-    const paramsObject = route.getParamsObject(['kitze', 'profile']);
+    const paramsObject = route.getParamsObject(['Simraki', 'profile']);
 
     expect(route.path).toBe('/profile/:username/:tab');
     expect(paramsObject).toEqual({
         tab: 'profile',
-        username: 'kitze'
+        username: 'Simraki'
     });
-    expect(replacedUrlParams).toBe('/profile/kitze/profile');
+    expect(replacedUrlParams).toBe('/profile/Simraki/profile');
     expect(route.rootPath).toBe('/profile');
 });
