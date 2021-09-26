@@ -6,7 +6,7 @@ const rootStore = new RootStore();
 
 test('Hash routing Scenario', () => {
     startRouter(routes, rootStore, {
-        html5history: false
+        html5history: false,
     });
     const { router } = rootStore;
     router.currentRoute = routes.home;
@@ -15,8 +15,8 @@ test('Hash routing Scenario', () => {
     expect(window.location.pathname).toBe('/');
     expect(window.location.hash).toBe('#/');
 
-    router.goTo(routes.profile, { username: 'kitze' }, { id: '123' });
-    expect(router.currentPath).toBe('/profile/kitze?id=123');
+    router.goTo(routes.profile, { username: 'Simraki' }, { id: '123' });
+    expect(router.currentPath).toBe('/profile/Simraki?id=123');
     expect(window.location.pathname).toBe('/');
-    expect(window.location.hash).toBe('#/profile/kitze?id=123');
+    expect(window.location.hash).toBe('#/profile/Simraki?id=123');
 });

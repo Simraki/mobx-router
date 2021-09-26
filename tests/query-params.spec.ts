@@ -10,12 +10,12 @@ test('Router Scenario', () => {
 
     expect(router.currentPath).toBe('/');
 
-    router.goTo(routes.profile, { username: 'kitze' }, { id: '123' });
+    router.goTo(routes.profile, { username: 'Simraki' }, { id: '123' });
 
     expect(mocks.exitingHome).toBeCalled();
-    expect(router.currentPath).toBe('/profile/kitze?id=123');
+    expect(router.currentPath).toBe('/profile/Simraki?id=123');
     expect(mocks.changingParamsProfile).toHaveBeenCalledTimes(0);
-    expect(mocks.enteringProfile).lastCalledWith({ username: 'kitze' });
+    expect(mocks.enteringProfile).lastCalledWith({ username: 'Simraki' });
 
     router.goTo(routes.profile, { username: 'kristijan' });
 
@@ -43,7 +43,7 @@ test('Router Scenario', () => {
     expect(mocks.exitingProfile).toBeCalled();
     expect(mocks.exitingProfile).lastCalledWith({
         tab: 'about',
-        username: 'kristijan'
+        username: 'kristijan',
     });
     expect(mocks.enteringHome).toBeCalled();
     expect(mocks.enteringHome).lastCalledWith();
@@ -72,7 +72,7 @@ test('Router Scenario', () => {
         routes.profile,
         { username: 'kristijan', tab: 'about' },
         {
-            id: '123'
+            id: '123',
         }
     );
 

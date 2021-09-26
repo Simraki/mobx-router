@@ -1,9 +1,10 @@
 import { toJS } from 'mobx';
 import queryString from 'query-string';
 
-import { paramRegex, optionalRegex } from './regex';
+import { optionalRegex, paramRegex } from './regex';
 import { getRegexMatches } from './utils';
 import { Store } from './router-store';
+import React from 'react';
 
 export type RoutesConfig<T extends Store> = {
     [path: string]: Route<T, any, any>;
@@ -72,9 +73,10 @@ export class Route<
         onParamsChange,
         beforeEnter,
         onExit,
-        title
+        title,
     }: {
         path: string;
+        // eslint-disable-next-line no-undef
         component: JSX.Element;
         onEnter?: Route<S, P, Q>['onEnter'];
         beforeExit?: Route<S, P, Q>['beforeExit'];
