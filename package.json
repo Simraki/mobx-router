@@ -1,5 +1,5 @@
 {
-  "name": "@Simraki/mobx-router",
+  "name": "@simraki/mobx-router",
   "version": "0.3.0",
   "description": "A simple router for MobX",
   "main": "dist/index.js",
